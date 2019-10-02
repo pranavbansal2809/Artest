@@ -8,4 +8,24 @@
     <string name="sign_in">Sign In</string>
     <string name="or">or</string>
     <string name="sign_up_message">New Here? Sign Up</string>
+
+    <!-- Profile Page Strings -->
+    <string name="content_desc_cover">Cover Photo</string>
+    <string name="content_desc_profile">Profile Photo</string>
+    <string name="btn_message">Message</string>
+
+    <string name="gigs_title">Gigs</string>
+    <string name="rating_title">Rating</string>
+    <string name="recent_gigs">Recent Gigs</string>
+
+    <string name="name_placeholder">Music Man</string>
+    <string name="place_placeholder">Delhi, India</string>
+    <string name="chip_instrument_placeholder">Guitarist</string>
+    <string name="chip_vocalist_placeholder">Vocalist</string>
+    <string name="chip_band_placeholder">Plays in a Band</string>
+    <string name="gigs_placeholder">18</string>
+    <string name="rating_placeholder">4.7</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

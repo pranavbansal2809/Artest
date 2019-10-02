@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.ProfileFragment">
+
+    <ImageView
+        android:id="@+id/ivCover"
+        android:background="@android:color/background_dark"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="H,2:.75"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/content_desc_cover" />
+
+    <Space
+        android:id="@+id/space"
+        android:layout_marginBottom="64dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/ivCover" />
+
+    <ImageView
+        android:id="@+id/ivProfile"
+        android:background="@drawable/label"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/space"
+        android:contentDescription="@string/content_desc_profile" />
+
+    <Space
+        android:id="@+id/spaceBtn"
+        android:layout_marginBottom="8dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/ivProfile" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvMessage"
+        android:backgroundTint="@color/colorAccent"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/spaceBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tvMessage"
+            android:text="@string/btn_message"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="18sp"
+            android:drawablePadding="8dp"
+            android:drawableTint="?android:textColorPrimary"
+            android:drawableEnd="@drawable/ic_send_black_24dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/tvGigsTitle"
+        android:text="@string/gigs_title"
+        android:textSize="16sp"
+        android:textColor="@color/colorAccentDark"
+        android:fontFamily="@font/roboto_slab"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/ivCover"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/cvMessage" />
+
+    <TextView
+        android:id="@+id/tvGigsValue"
+        android:text="@string/gigs_placeholder"
+        android:textSize="14sp"
+        android:textColor="?android:textColorPrimary"
+        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvGigsTitle"
+        app:layout_constraintStart_toStartOf="@id/tvGigsTitle"
+        app:layout_constraintEnd_toEndOf="@id/tvGigsTitle" />
+
+    <TextView
+        android:id="@+id/tvRatingTitle"
+        android:text="@string/rating_title"
+        android:textSize="16sp"
+        android:textColor="@color/colorAccentDark"
+        android:fontFamily="@font/roboto_slab"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/ivCover"
+        app:layout_constraintStart_toEndOf="@id/cvMessage"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvRatingValue"
+        android:text="@string/rating_placeholder"
+        android:textSize="14sp"
+        android:textColor="?android:textColorPrimary"
+        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvRatingTitle"
+        app:layout_constraintStart_toStartOf="@id/tvRatingTitle"
+        app:layout_constraintEnd_toEndOf="@id/tvRatingTitle" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:text="@string/name_placeholder"
+        android:textColor="@color/colorAccentDark"
+        android:textSize="24sp"
+        android:fontFamily="@font/roboto_slab"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/cvMessage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPlace"
+        android:text="@string/place_placeholder"
+        android:textColor="?android:textColorSecondary"
+        android:textSize="14sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/chips"
+        android:gravity="center"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvPlace">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cInstrument"
+            android:text="@string/chip_instrument_placeholder"
+            android:checkable="false"
+            android:layout_marginEnd="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvPlace"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cVocal"
+            android:text="@string/chip_vocalist_placeholder"
+            android:checkable="false"
+            android:layout_marginEnd="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvPlace"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cBand"
+            android:text="@string/chip_band_placeholder"
+            android:checkable="false"
+            android:layout_marginEnd="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvPlace"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvRecentGigs"
+        android:text="@string/recent_gigs"
+        android:textSize="18sp"
+        android:textColor="@color/colorAccentDark"
+        android:layout_marginStart="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/chips"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvRecentGigs"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvRecentGigs"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
