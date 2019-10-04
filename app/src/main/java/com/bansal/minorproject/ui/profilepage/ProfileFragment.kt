@@ -1,6 +1,7 @@
-package com.bansal.minorproject.ui
+package com.bansal.minorproject.ui.profilepage
 
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -23,6 +24,10 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val itemView = inflater.inflate(R.layout.fragment_profile, container, false)
+
+        itemView.ivProfile.apply {
+            borderWidth = 2f
+        }
 
         itemView.rvRecentGigs.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         itemView.rvRecentGigs.adapter = RecentGigsRecyclerAdapter()

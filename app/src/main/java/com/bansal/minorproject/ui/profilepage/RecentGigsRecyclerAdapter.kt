@@ -1,6 +1,7 @@
-package com.bansal.minorproject.ui
+package com.bansal.minorproject.ui.profilepage
 
 import android.graphics.Color
+import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,17 +13,11 @@ import java.util.*
 class RecentGigsRecyclerAdapter : RecyclerView.Adapter<RecentGigsRecyclerAdapter.RecentGigsViewHolder> () {
 
     inner class RecentGigsViewHolder (itemView: View) : RecyclerView.ViewHolder (itemView) {
-        private val cvGigBackground = itemView.cvGigBackground
-        private val random = Random()
+        private val ivEstablishmentImage = itemView.ivEstablishmentImage
+        private val images = arrayOf(R.drawable.establishment1, R.drawable.establishment2)
 
-        internal fun bindView() {
-            val color = Color.argb(
-                255,
-                random.nextInt(256),
-                random.nextInt(256),
-                random.nextInt(256)
-            )
-            cvGigBackground.setCardBackgroundColor(color)
+        internal fun bindView(position: Int) {
+            ivEstablishmentImage.setBackgroundResource(images[position % 2])
         }
     }
 
@@ -30,7 +25,7 @@ class RecentGigsRecyclerAdapter : RecyclerView.Adapter<RecentGigsRecyclerAdapter
             = RecentGigsViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.layout_recent_gig, parent, false))
 
     override fun onBindViewHolder(holder: RecentGigsViewHolder, position: Int) {
-        holder.bindView()
+        holder.bindView(position)
     }
 
     override fun getItemCount() = 7

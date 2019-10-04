@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "448928085324",
+    "firebase_url": "https://minorproject-b1bb7.firebaseio.com",
+    "project_id": "minorproject-b1bb7",
+    "storage_bucket": "minorproject-b1bb7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:448928085324:android:870906b2fac7cbc657cbe9",
+        "android_client_info": {
+          "package_name": "com.bansal.minorproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "448928085324-cf4mprucbmrpvtdjgtccbpl9hs7l23ob.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bansal.minorproject",
+            "certificate_hash": "80838e018d6df1e0511924feed9b1efbe5dcb0a8"
+          }
+        },
+        {
+          "client_id": "448928085324-7nvihuuhb1bircjed82og9tocjd5lb99.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bansal.minorproject",
+            "certificate_hash": "e902dd89df16d8849f346905f7909126d36bcd90"
+          }
+        },
+        {
+          "client_id": "448928085324-82e8soj2stintlp884jtelel0hhgejh9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARyyn2xD4q8mA-IlBXDoAHMCUP7GmphuQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "448928085324-82e8soj2stintlp884jtelel0hhgejh9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

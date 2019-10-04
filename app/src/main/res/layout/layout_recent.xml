@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/ivEstablishmentImage"
+        android:layout_marginStart="16dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:contentDescription="@string/content_desc_est" />
+
+    <TextView
+        android:id="@+id/tvEstablishmentName"
+        android:text="@string/est_name_placeholder"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="16sp"
+        android:layout_marginStart="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/ivEstablishmentImage"
+        app:layout_constraintStart_toEndOf="@id/ivEstablishmentImage" />
+
+    <TextView
+        android:id="@+id/tvEstablishmentLocation"
+        android:text="@string/est_loc_placeholder"
+        android:textColor="?android:textColorSecondary"
+        android:textSize="12sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvEstablishmentName"
+        app:layout_constraintStart_toStartOf="@id/tvEstablishmentName" />
+
+    <TextView
+        android:id="@+id/tvEstablishmentRating"
+        android:text="@string/rating_placeholder"
+        android:textColor="?android:textColorPrimary"
+        android:layout_marginEnd="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/tvEstablishmentName"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,6 +4,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 28
@@ -55,6 +56,11 @@ dependencies {
     kapt "androidx.room:room-compiler:$room_version"
     //Work Manager
     implementation "androidx.work:work-runtime-ktx:$work_version"
+    //Circular Image View
+    implementation 'com.mikhaellopez:circularimageview:4.0.2'
+    //Firebase
+    implementation 'com.google.firebase:firebase-auth:19.1.0'
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
     //Test Dependencies
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
