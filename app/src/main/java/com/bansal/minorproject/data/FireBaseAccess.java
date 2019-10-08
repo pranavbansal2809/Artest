@@ -4,6 +4,7 @@ package com.bansal.minorproject.data;
 import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -72,20 +73,23 @@ public class FireBaseAccess {
         return authStateListener;
     }
 
-    public GoogleApiClient getGoogleApiClient(Context context) {
-        GoogleSignInOptions gso =  new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken("448928085324-82e8soj2stintlp884jtelel0hhgejh9.apps.googleusercontent.com")//you can also use R.string.default_web_client_id
-                .requestEmail()
-                .build();
-        googleApiClient=new GoogleApiClient.Builder(context)
-                .enableAutoManage((FragmentActivity) context, new GoogleApiClient.OnConnectionFailedListener() {
-                    @Override
-                    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-                        Log.d(TAG, "onConnectionFailed: connection failed");
-                    }
-                })
-                .addApi(Auth.GOOGLE_SIGN_IN_API,gso)
-                .build();
+    public GoogleApiClient getGoogleApiClient(View view) {
+        Context context=view.getContext();
+        if(googleApiClient==null) {
+            GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                    .requestIdToken("448928085324-82e8soj2stintlp884jtelel0hhgejh9.apps.googleusercontent.com")//you can also use R.string.default_web_client_id
+                    .requestEmail()
+                    .build();
+            googleApiClient = new GoogleApiClient.Builder(context)
+                    .enableAutoManage((FragmentActivity) context, new GoogleApiClient.OnConnectionFailedListener() {
+                        @Override
+                        public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+                            Log.d(TAG, "onConnectionFailed: connection failed");
+                        }
+                    })
+                    .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
+                    .build();
+        }
 
         return googleApiClient;
     }
