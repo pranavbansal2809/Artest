@@ -4,30 +4,31 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.login.LoginFragment">
+    tools:context=".ui.login.RegisterFragment">
 
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <View
             android:background="@drawable/background_circle"
-            android:backgroundTint="@color/colorAccent"
             android:layout_marginTop="-184dp"
             android:layout_marginStart="-64dp"
             android:layout_width="364dp"
             android:layout_height="364dp" />
+
         <View
             android:background="@drawable/background_circle"
+            android:backgroundTint="@color/colorAccent"
             android:layout_marginTop="-184dp"
             android:layout_marginStart="-72dp"
             android:layout_width="364dp"
             android:layout_height="364dp" />
 
         <TextView
-            android:text="@string/login_header"
+            android:text="@string/register_header"
             android:textColor="?android:textColorPrimary"
             android:layout_marginTop="48dp"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="24dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/TextAppearance.MinorProject.Headline1" />
@@ -69,8 +70,8 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnSignIn"
-        android:text="@string/sign_in"
+        android:id="@+id/btnSignUp"
+        android:text="@string/sign_up"
         android:layout_gravity="end|bottom"
         android:layout_margin="16dp"
         android:layout_width="wrap_content"
@@ -130,7 +131,7 @@
     </LinearLayout>
 
     <TextView
-        android:text="@string/sign_up_message"
+        android:text="@string/sign_in_message"
         android:gravity="center"
         android:layout_marginTop="32dp"
         android:layout_marginStart="16dp"

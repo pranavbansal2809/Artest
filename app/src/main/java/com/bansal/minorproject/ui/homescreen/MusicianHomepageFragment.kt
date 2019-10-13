@@ -10,12 +10,20 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.bansal.minorproject.R
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_musician_homepage.view.*
 
 /**
  * A simple [Fragment] subclass.
  */
 class MusicianHomepageFragment : Fragment() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        if(FirebaseAuth.getInstance().currentUser == null)
+            findNavController().navigate(R.id.action_home_fragment_to_login_fragment)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,7 +40,7 @@ class MusicianHomepageFragment : Fragment() {
         itemView.ivProfile.apply {
             borderWidth = 0f
             setOnClickListener {
-                findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
+                findNavController().navigate(R.id.action_home_fragment_to_profile_fragment)
             }
         }
 
