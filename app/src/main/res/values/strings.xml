@@ -9,6 +9,47 @@
     <string name="or">or</string>
     <string name="sign_up_message">New Here? Sign Up</string>
 
+    <!-- Register Page Strings -->
+    <string name="register_header">Hey There</string>
+    <string name="sign_up">Get Started</string>
+    <string name="sign_in_message">Have an account? Sign In</string>
+
+    <string name="step_one">Basic Details</string>
+    <string name="step_two">Music Preferences</string>
+    <string name="step_three">Dates and Timing</string>
+
+    <string name="content_desc_progress">Progress Indicator</string>
+
+    <!-- Form Strings -->
+    <string name="option_head">Are you a musician or an establishment?</string>
+    <string name="option_music">I am a musician</string>
+    <string name="option_est">We are an Establishment</string>
+    <string name="desc_head">Tell us Something about yourself</string>
+    <string name="desc_hint">I am a/We are a&#8230;</string>
+
+    <string name="type_head">Select the Genres of Music you\'d most like</string>
+    <string name="instrument_head">Pick the Musical Instrument you\'re most comfortable with</string>
+    <string name="band_head">Would you like to host a band at your premises?</string>
+
+    <string name="option_rock">Rock and Roll</string>
+    <string name="option_blues">Blues</string>
+    <string name="option_jazz">Jazz</string>
+    <string name="option_pop">Pop</string>
+
+    <string name="time_head">Which Time Slot do you have free?</string>
+    <string name="day_head">Select days of the week for which you require the app</string>
+
+    <string name="option_monday">Monday</string>
+    <string name="option_tuesday">Tuesday</string>
+    <string name="option_wednesday">Wednesday</string>
+    <string name="option_thursday">Thursday</string>
+    <string name="option_friday">Friday</string>
+    <string name="option_saturday">Saturday</string>
+    <string name="option_sunday">Sunday</string>
+
+    <string name="start_head">Start Time:</string>
+    <string name="end_head">End Time:</string>
+
     <!-- Profile Page Strings -->
     <string name="content_desc_cover">Cover Photo</string>
     <string name="content_desc_profile">Profile Photo</string>

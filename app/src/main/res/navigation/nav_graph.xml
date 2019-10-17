@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/loginFragment"
@@ -11,7 +11,33 @@
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/action_loginFragment_to_homeFragment"
+            android:id="@+id/action_loginFragment_to_register_fragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_login_fragment_to_home_fragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.bansal.minorproject.ui.login.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_register_fragment_to_login_fragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_register_fragment_to_information_fragment"
+            app:destination="@id/informationFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/informationFragment"
+        android:name="com.bansal.minorproject.ui.login.InformationFragment"
+        android:label="fragment_information"
+        tools:layout="@layout/fragment_information">
+        <action
+            android:id="@+id/action_information_fragment_to_home_fragment"
             app:destination="@id/homeFragment" />
     </fragment>
 
@@ -27,7 +53,10 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_musician_homepage">
         <action
-            android:id="@+id/action_homeFragment_to_profileFragment"
+            android:id="@+id/action_home_fragment_to_login_fragment"
+            app:destination="@+id/loginFragment"/>
+        <action
+            android:id="@+id/action_home_fragment_to_profile_fragment"
             app:destination="@id/profileFragment" />
     </fragment>
 
