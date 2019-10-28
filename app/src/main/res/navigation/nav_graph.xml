@@ -25,7 +25,9 @@
         tools:layout="@layout/fragment_register">
         <action
             android:id="@+id/action_register_fragment_to_login_fragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true"/>
         <action
             android:id="@+id/action_register_fragment_to_information_fragment"
             app:destination="@id/informationFragment" />
