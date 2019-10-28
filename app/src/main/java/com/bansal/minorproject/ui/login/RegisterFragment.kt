@@ -6,8 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 
 import com.bansal.minorproject.R
+import kotlinx.android.synthetic.main.fragment_register.view.*
 
 /**
  * A simple [Fragment] subclass.
@@ -19,7 +21,12 @@ class RegisterFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_register, container, false)
+
+        val view = inflater.inflate(R.layout.fragment_register, container, false)
+        view.textSignIn.setOnClickListener {
+            findNavController().navigate(R.id.action_register_fragment_to_login_fragment)
+        }
+        return view
     }
 
 

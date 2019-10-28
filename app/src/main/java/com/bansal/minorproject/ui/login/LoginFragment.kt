@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.fragment.findNavController
 import com.bansal.minorproject.R
@@ -40,10 +41,17 @@ class LoginFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_login, container, false)
 
         view.btnSignIn.setOnClickListener {
-            firebaseAccess.loginUser(context, arrayOf(view.etEmail.text.toString(), view.etPassword.text.toString()))
+            if(view.etEmail.text.toString()!="" && view.etPassword.text.toString()!="") {
+                firebaseAccess.loginUser(
+                    context,
+                    arrayOf(view.etEmail.text.toString(), view.etPassword.text.toString())
+                )
+            }else{
+                Toast.makeText(view.context,"Enter Email and Password",Toast.LENGTH_SHORT).show()
+            }
         }
         
-        view.btnSignIn.setOnClickListener {
+        view.textRegister.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_register_fragment)
         }
 
