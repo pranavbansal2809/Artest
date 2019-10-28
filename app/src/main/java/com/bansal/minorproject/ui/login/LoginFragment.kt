@@ -42,7 +42,7 @@ class LoginFragment : Fragment() {
 
         view.btnSignIn.setOnClickListener {
             if(view.etEmail.text.toString()!="" && view.etPassword.text.toString()!="") {
-                firebaseAccess.loginUser(
+                fireBaseAccess.loginUser(
                     context,
                     arrayOf(view.etEmail.text.toString(), view.etPassword.text.toString())
                 )
@@ -51,8 +51,8 @@ class LoginFragment : Fragment() {
             }
         }
         
-        view.textRegister.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_register_fragment)
+        view.tvSignUp.setOnClickListener {
+            findNavController().navigate(R.id.action_login_fragment_to_register_fragment)
         }
     
         val client = fireBaseAccess.getGoogleApiClient(view)
