@@ -20,13 +20,17 @@ class RegisterFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+        val itemView = inflater.inflate(R.layout.fragment_register, container, false)
 
-        val view = inflater.inflate(R.layout.fragment_register, container, false)
-        view.textSignIn.setOnClickListener {
+        itemView.tvSignIn.setOnClickListener {
             findNavController().navigate(R.id.action_register_fragment_to_login_fragment)
         }
-        return view
+
+        itemView.btnSignUp.setOnClickListener {
+            findNavController().navigate(R.id.action_register_fragment_to_information_fragment)
+        }
+
+        return itemView
     }
 
 

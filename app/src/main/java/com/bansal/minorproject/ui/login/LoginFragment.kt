@@ -25,11 +25,11 @@ import kotlinx.android.synthetic.main.fragment_login.view.*
 class LoginFragment : Fragment() {
 
     private val mAuth = FirebaseAuth.getInstance()
-    private val firebaseAccess = FireBaseAccess().fireBaseAccess
-    private val authStateListener = firebaseAccess.authStateListener
+    private val fireBaseAccess = FireBaseAccess().fireBaseAccess
+    private val authStateListener = fireBaseAccess.authStateListener
 
     init {
-        firebaseAccess.navigate = FireBaseAccess.Navigate {
+        fireBaseAccess.navigate = FireBaseAccess.Navigate {
             findNavController().navigate(R.id.action_login_fragment_to_home_fragment)
         }
     }
@@ -54,8 +54,8 @@ class LoginFragment : Fragment() {
         view.textRegister.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_register_fragment)
         }
-
-        val client = firebaseAccess.getGoogleApiClient(view)
+    
+        val client = fireBaseAccess.getGoogleApiClient(view)
         client.connect()
 
         view.fabGoogle.setOnClickListener {
@@ -87,7 +87,7 @@ class LoginFragment : Fragment() {
         super.onActivityResult(requestCode, resultCode, data)
 
         if(requestCode == RC_SIGN_IN) {
-            firebaseAccess.handleSignInResult(
+            fireBaseAccess.handleSignInResult(
                 Auth.GoogleSignInApi.getSignInResultFromIntent(data),
                 context
             )
@@ -96,7 +96,7 @@ class LoginFragment : Fragment() {
 
     override fun onPause() {
         super.onPause()
-        val client = firebaseAccess.getGoogleApiClient(view)
+        val client = fireBaseAccess.getGoogleApiClient(view)
         client.stopAutoManage(context as FragmentActivity)
         client.disconnect()
     }
