@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 
 import com.bansal.minorproject.R
@@ -28,12 +29,17 @@ class RegisterFragment : Fragment() {
         }
 
         itemView.btnSignUp.setOnClickListener {
-            val bundle = Bundle().apply {
-                putString("email", etEmail.text.toString())
-                putString("password", etPassword.text.toString())
+            if(itemView.etEmail.text.toString()!=""&& itemView.etPassword.text.toString()!="") {
+              val bundle = Bundle().apply {
+              putString("email", etEmail.text.toString())
+              putString("password", etPassword.text.toString())
+              }
+
+              findNavController().navigate(R.id.action_register_fragment_to_information_fragment, bundle)
+            }else{
+                Toast.makeText(itemView.context,"Enter Email and Password", Toast.LENGTH_SHORT).show()
             }
 
-            findNavController().navigate(R.id.action_register_fragment_to_information_fragment, bundle)
         }
 
         return itemView
