@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 
 import com.bansal.minorproject.R
+import kotlinx.android.synthetic.main.fragment_register.*
 import kotlinx.android.synthetic.main.fragment_register.view.*
 
 /**
@@ -29,10 +30,16 @@ class RegisterFragment : Fragment() {
 
         itemView.btnSignUp.setOnClickListener {
             if(itemView.etEmail.text.toString()!=""&& itemView.etPassword.text.toString()!="") {
-                findNavController().navigate(R.id.action_register_fragment_to_information_fragment)
+              val bundle = Bundle().apply {
+              putString("email", etEmail.text.toString())
+              putString("password", etPassword.text.toString())
+              }
+
+              findNavController().navigate(R.id.action_register_fragment_to_information_fragment, bundle)
             }else{
                 Toast.makeText(itemView.context,"Enter Email and Password", Toast.LENGTH_SHORT).show()
             }
+
         }
 
         return itemView

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.login.DetailsFragment">
+
+    <include
+        android:id="@+id/viewOne"
+        layout="@layout/layout_basic_details"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/viewTwo"
+        layout="@layout/layout_basic_details"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/viewThree"
+        layout="@layout/layout_basic_details"
+        android:visibility="gone" />
+
+</FrameLayout>

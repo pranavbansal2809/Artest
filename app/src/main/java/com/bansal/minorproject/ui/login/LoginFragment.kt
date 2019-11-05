@@ -102,6 +102,7 @@ class LoginFragment : Fragment() {
     }
 
     companion object {
+
         @JvmStatic
         fun newInstance() = LoginFragment()
 

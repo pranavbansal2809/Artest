@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">ArtEst</string>
 
+    <string name="facebook_app_id">531313324376118</string>
+    <string name="fb_login_protocol_scheme">fb531313324376118</string>
+
     <!-- Login Page Strings -->
     <string name="login_header">Welcome Back</string>
     <string name="email">Email</string>
@@ -49,6 +52,8 @@
 
     <string name="start_head">Start Time:</string>
     <string name="end_head">End Time:</string>
+
+    <string name="next">Next</string>
 
     <!-- Profile Page Strings -->
     <string name="content_desc_cover">Cover Photo</string>

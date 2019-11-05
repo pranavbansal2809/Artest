@@ -6,10 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.bansal.minorproject.R
+import com.bansal.minorproject.ui.login.viewmodels.LoginViewModel
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_musician_homepage.view.*
 
@@ -18,12 +21,7 @@ import kotlinx.android.synthetic.main.fragment_musician_homepage.view.*
  */
 class MusicianHomepageFragment : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        if(FirebaseAuth.getInstance().currentUser == null)
-            findNavController().navigate(R.id.action_home_fragment_to_login_fragment)
-    }
+    private val viewModel: LoginViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,6 +29,21 @@ class MusicianHomepageFragment : Fragment() {
     ): View? {
         val itemView = inflater.inflate(R.layout.fragment_musician_homepage, container, false)
 
+        viewModel.authenticationState.observe(viewLifecycleOwner, Observer { authenticationState ->
+                when(authenticationState) {
+                    LoginViewModel.AuthenticationState.AUTHENTICATED ->
+                        setupPage(itemView)
+                    LoginViewModel.AuthenticationState.UNAUTHENTICATED ->
+                        findNavController().navigate(R.id.action_home_fragment_to_login_fragment)
+                    LoginViewModel.AuthenticationState.INVALID_AUTHENTICATION -> {}
+                    else -> { /*Do Nothing*/ }
+                }
+        })
+
+        return itemView
+    }
+
+    private fun setupPage(itemView: View) {
         itemView.rvPickedList.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         itemView.rvPickedList.adapter = PickedRecyclerAdapter()
 
@@ -43,9 +56,5 @@ class MusicianHomepageFragment : Fragment() {
                 findNavController().navigate(R.id.action_home_fragment_to_profile_fragment)
             }
         }
-
-        return itemView
     }
-
-
 }
