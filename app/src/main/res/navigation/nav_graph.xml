@@ -12,6 +12,8 @@
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_login_fragment_to_register_fragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true"
             app:destination="@id/registerFragment" />
         <action
             android:id="@+id/action_login_fragment_to_home_fragment"
@@ -25,10 +27,21 @@
         tools:layout="@layout/fragment_register">
         <action
             android:id="@+id/action_register_fragment_to_login_fragment"
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true"
             app:destination="@id/loginFragment" />
         <action
             android:id="@+id/action_register_fragment_to_information_fragment"
-            app:destination="@id/informationFragment" />
+            app:destination="@id/informationFragment">
+            <argument
+                android:name="email"
+                app:argType="string"
+                android:defaultValue="_" />
+            <argument
+                android:name="password"
+                app:argType="string"
+                android:defaultValue="_" />
+        </action>
     </fragment>
 
     <fragment
@@ -54,6 +67,8 @@
         tools:layout="@layout/fragment_musician_homepage">
         <action
             android:id="@+id/action_home_fragment_to_login_fragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true"
             app:destination="@+id/loginFragment"/>
         <action
             android:id="@+id/action_home_fragment_to_profile_fragment"

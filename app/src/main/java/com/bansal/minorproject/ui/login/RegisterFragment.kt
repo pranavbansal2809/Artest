@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 
 import com.bansal.minorproject.R
+import kotlinx.android.synthetic.main.fragment_register.*
 import kotlinx.android.synthetic.main.fragment_register.view.*
 
 /**
@@ -27,7 +28,12 @@ class RegisterFragment : Fragment() {
         }
 
         itemView.btnSignUp.setOnClickListener {
-            findNavController().navigate(R.id.action_register_fragment_to_information_fragment)
+            val bundle = Bundle().apply {
+                putString("email", etEmail.text.toString())
+                putString("password", etPassword.text.toString())
+            }
+
+            findNavController().navigate(R.id.action_register_fragment_to_information_fragment, bundle)
         }
 
         return itemView
